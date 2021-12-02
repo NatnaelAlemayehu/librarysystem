@@ -36,9 +36,9 @@
 				</div>
 			
 				
-				<div class="icon">
+				<!-- <div class="icon">
 					<input class="m-balance" type="number" name="m_balance" id="m_balance" placeholder="Initial Balance" required />
-				</div>
+				</div> -->
 				
 				<br />
 				<input type="submit" name="m_register" value="Submit" />
@@ -66,8 +66,8 @@
 						echo error_with_field("An account is already registered with that email", "m_email");
 					else
 					{
-						$query = $con->prepare("INSERT INTO pending_registrations(username, password, name, email, balance) VALUES(?, ?, ?, ?, ?);");
-						$query->bind_param("ssssd", $_POST['m_user'], sha1($_POST['m_pass']), $_POST['m_name'], $_POST['m_email'], $_POST['m_balance']);
+						$query = $con->prepare("INSERT INTO pending_registrations(username, password, name, email) VALUES(?, ?, ?, ?);");
+						$query->bind_param("ssss", $_POST['m_user'], sha1($_POST['m_pass']), $_POST['m_name'], $_POST['m_email']);
 						if($query->execute())
 							echo success("Details submitted, soon you'll will be notified after verifications!");
 						else

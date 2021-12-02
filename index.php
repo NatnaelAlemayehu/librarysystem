@@ -22,7 +22,7 @@
 					<img src="img/ic_membership.svg" width="250px" height="auto"/><br />
 					&nbsp;Member Login
 				</a>
-			</div>
+			</div>			
 			<div id="verticalLine">
 				<div id="librarian">
 					<a id="librarian-link" href="librarian">
@@ -30,6 +30,12 @@
 						&nbsp;&nbsp;&nbsp;Librarian Login
 					</a>
 				</div>
+			</div>
+			<div id="admin">
+				<a href="admin">
+					<img src="img/ic_membership.svg" width="250px" height="auto"/><br />
+					&nbsp;Admin Login
+				</a>
 			</div>
 		</div>
 	</body>

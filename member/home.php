@@ -97,26 +97,32 @@
 									echo error_without_field("You have already issued a copy of this book");
 								else
 								{
-									$query = $con->prepare("SELECT balance FROM member WHERE username = ?;");
-									$query->bind_param("s", $_SESSION['username']);
-									$query->execute();
-									$memberBalance = mysqli_fetch_array($query->get_result())[0];
+									// $query = $con->prepare("SELECT balance FROM member WHERE username = ?;");
+									// $query->bind_param("s", $_SESSION['username']);
+									// $query->execute();
+									// $memberBalance = mysqli_fetch_array($query->get_result())[0];
 									
-									$query = $con->prepare("SELECT price FROM book WHERE isbn = ?;");
-									$query->bind_param("s", $_POST['rd_book']);
-									$query->execute();
-									$bookPrice = mysqli_fetch_array($query->get_result())[0];
-									if($memberBalance < $bookPrice)
-										echo error_without_field("You do not have sufficient balance to issue this book");
+									// $query = $con->prepare("SELECT price FROM book WHERE isbn = ?;");
+									// $query->bind_param("s", $_POST['rd_book']);
+									// $query->execute();
+									// $bookPrice = mysqli_fetch_array($query->get_result())[0];
+									// if($memberBalance < $bookPrice)
+									// 	echo error_without_field("You do not have sufficient balance to issue this book");
+									// else
+									// {
+									// 	$query = $con->prepare("INSERT INTO pending_book_requests(member, book_isbn) VALUES(?, ?);");
+									// 	$query->bind_param("ss", $_SESSION['username'], $_POST['rd_book']);
+									// 	if(!$query->execute())
+									// 		echo error_without_field("ERROR: Couldn\'t request book");
+									// 	else
+									// 		echo success("Selected book has been requested. Soon you'll' be notified when the book is issued to your account!");
+									// }
+									$query = $con->prepare("INSERT INTO pending_book_requests(member, book_isbn) VALUES(?, ?);");
+									$query->bind_param("ss", $_SESSION['username'], $_POST['rd_book']);
+									if(!$query->execute())
+										echo error_without_field("ERROR: Couldn\'t request book");
 									else
-									{
-										$query = $con->prepare("INSERT INTO pending_book_requests(member, book_isbn) VALUES(?, ?);");
-										$query->bind_param("ss", $_SESSION['username'], $_POST['rd_book']);
-										if(!$query->execute())
-											echo error_without_field("ERROR: Couldn\'t request book");
-										else
-											echo success("Selected book has been requested. Soon you'll' be notified when the book is issued to your account!");
-									}
+										echo success("Selected book has been requested. Soon you'll' be notified when the book is issued to your account!");
 								}
 							}
 						}

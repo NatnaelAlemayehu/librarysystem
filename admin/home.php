@@ -11,7 +11,10 @@
 	</head>
 	<body>
 		<div id="allTheThings">
-			
+		    <a href="delete_user.php">
+				<input type="button" value="Remove Members" />
+			</a><br />
+
 			<a href="insert_book.php">
 				<input type="button" value="Insert New Book Record" />
 			</a><br />
