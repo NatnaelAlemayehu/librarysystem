@@ -53,7 +53,7 @@
 			{
 				$resultRow = mysqli_fetch_array($result);
 				$_SESSION['type'] = "admin";
-				$_SESSION['id'] = $resultRow[0];
+				// $_SESSION['id'] = $resultRow[0];
 				$_SESSION['username'] = $_POST['l_user'];
 				header('Location: home.php');
 			}

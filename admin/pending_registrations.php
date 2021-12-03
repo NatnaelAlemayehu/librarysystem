@@ -75,8 +75,8 @@
 						$query->execute();
 						$row = mysqli_fetch_array($query->get_result());
 						
-						$query = $con->prepare("INSERT INTO member(username, password, name, email, balance) VALUES(?, ?, ?, ?, ?);");
-						$query->bind_param("ssssd", $username, $row[1], $row[2], $row[3], $row[4]);
+						$query = $con->prepare("INSERT INTO member(username, password, name, email) VALUES(?, ?, ?, ?);");
+						$query->bind_param("ssss", $username, $row[1], $row[2], $row[3]);
 						if(!$query->execute())
 							die(error_without_field("ERROR: Couldn\'t insert values"));
 						$members++;

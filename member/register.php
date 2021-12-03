@@ -75,8 +75,11 @@
 					{
 						$query = $con->prepare("INSERT INTO pending_registrations(username, password, name, email, category) VALUES(?, ?, ?, ?, ?);");
 						$student = 'Student';
-						
-						$query->bind_param("sssss", $_POST['m_user'], sha1($_POST['m_pass']), $_POST['m_name'], $_POST['m_email'], $student);
+						$username = $_POST['m_user'];
+						$userpass = sha1($_POST['m_pass']);
+						$name = $_POST['m_name'];
+						$useremail = $_POST['m_email'];					
+						$query->bind_param("sssss", $student, $userpass, $name, $useremail, $student);
 						if($query->execute())
 							echo success("Details submitted, soon you'll will be notified after verifications!");
 						else

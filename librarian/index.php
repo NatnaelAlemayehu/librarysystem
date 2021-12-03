@@ -41,14 +41,16 @@
 		if(isset($_POST['l_login']))
 		{
 			$query = $con->prepare("SELECT id FROM librarian WHERE username = ? AND password = ?;");
-			$query->bind_param("ss", $_POST['l_user'], sha1($_POST['l_pass']));
+			$username = $_POST['l_user'];
+			$userpass = sha1($_POST['l_pass']); 
+			$query->bind_param("ss", $username, $userpass);
 			$query->execute();
 			if(mysqli_num_rows($query->get_result()) != 1)
 				echo error_without_field("Invalid username/password combination");
 			else
 			{
 				$_SESSION['type'] = "librarian";
-				$_SESSION['id'] = mysqli_fetch_array($result)[0];
+				// $_SESSION['id'] = mysqli_fetch_array($result)[0];
 				$_SESSION['username'] = $_POST['l_user'];
 				header('Location: home.php');
 			}
