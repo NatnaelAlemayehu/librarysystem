@@ -25,7 +25,7 @@
 			else
 			{
 				echo "<form class='cd-form' method='POST' action='#'>";
-				echo "<center><legend>Welcome To Your Student Dashboard</legend></center>";
+				echo "<center><legend>Welcome To Your Faculty Dashboard</legend></center>";
 				echo "<center><legend>List of Available Books</legend></center>";
 				echo "<div class='error-message' id='error-message'>
 						<p id='error'></p>

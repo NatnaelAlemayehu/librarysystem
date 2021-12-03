@@ -8,7 +8,7 @@
 			<a href="./">
 				<div id="cd-logo">
 					<img src="img/library.jpg" alt="Logo" width="45" height="45" />
-					<p>Library Management System</p>
+					<p>NatiNeba Management System</p>
 				</div>
 			</a>
 		</header>

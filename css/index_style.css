@@ -5,7 +5,8 @@
   margin: 8em auto;
   font-size: 1.3rem;
   color: #94aab0;
-  display: block;
+  display: flex;
+  align-items: stretch;
 }
 
 a{
@@ -14,8 +15,9 @@ a{
 }
 
 #member{
-	display: inline-block;
+	display: block;
 }
+
 
 #verticalLine {
 	display: inline-block;
@@ -27,12 +29,12 @@ a{
 	margin-left: 20px;
 }
 
-#member, #librarian
+#member, #librarian, #staff, #faculty, #admin
 {
 	transition: all .2s ease-in-out;
 }
 
-#member:hover, #librarian:hover
+#member:hover, #librarian:hover, #admin:hover, #faculty:hover, #staff:hover
 {
 	transform: scale(1.1);
 }

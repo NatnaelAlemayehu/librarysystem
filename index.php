@@ -9,7 +9,7 @@
 	else if(strcmp($_SESSION['type'], "member") == 0)
 		header("Location: member/home.php");
 ?>
-
+	
 <html>
 	<head>
 		<title>LMS</title>
@@ -17,26 +17,50 @@
 	</head>
 	<body>
 		<div id="allTheThings">
+			
 			<div id="member">
 				<a href="member">
 					<img src="img/ic_membership.svg" width="250px" height="auto"/><br />
-					&nbsp;Member Login
+					&nbsp;Student Login
 				</a>
-			</div>			
+			</div>
+				
+			<div id="verticalLine">
+				<div id="faculty">
+					<a href="faculty">
+						<img src="img/faculty.jfif" width="250px" height="auto"/><br />
+						&nbsp;Faculty Login
+					</a>
+				</div>	
+			</div>
+			<div id="verticalLine">
+			
+				<div id="staff">
+					<a href="staff">
+						<img src="img/staff.jpg" width="250px" height="auto"/><br />
+						&nbsp;Staff Login
+					</a>
+				</div>	
+					
+			</div>
 			<div id="verticalLine">
 				<div id="librarian">
 					<a id="librarian-link" href="librarian">
-						<img src="img/ic_librarian2.svg" width="250px" height="220" /><br />
+						<img src="img/librarian.jfif" width="250px" height="auto" /><br />
 						&nbsp;&nbsp;&nbsp;Librarian Login
 					</a>
 				</div>
 			</div>
-			<div id="admin">
-				<a href="admin">
-					<img src="img/ic_membership.svg" width="250px" height="auto"/><br />
-					&nbsp;Admin Login
-				</a>
+			<div id="verticalLine">
+			
+				<div id="admin">
+					<a href="admin">
+						<img src="img/admin.png" width="250px" height="auto"/><br />
+						&nbsp;Admin Login
+					</a>
+				</div>
 			</div>
+			
 		</div>
 	</body>
 </html>

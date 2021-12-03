@@ -15,7 +15,7 @@
 	<body>
 		<form class="cd-form" method="POST" action="#">
 		
-		<center><legend>Student Login</legend></center>
+		<center><legend>Faculty Login</legend></center>
 			
 			<div class="error-message" id="error-message">
 				<p id="error"></p>
@@ -42,7 +42,7 @@
 	<?php
 		if(isset($_POST['m_login']))
 		{
-			$query = $con->prepare("SELECT id FROM member WHERE username = ? AND password = ?;");
+			$query = $con->prepare("SELECT id FROM faculty WHERE username = ? AND password = ?;");
 			$query->bind_param("ss", $_POST['m_user'], sha1($_POST['m_pass']));
 			$query->execute();
 			$result = $query->get_result();

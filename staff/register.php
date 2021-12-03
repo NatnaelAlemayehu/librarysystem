@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<form class="cd-form" method="POST" action="#">
-			<center><legend>Student Registration</legend><p>Please fillup the form below:</p></center>
+			<center><legend>Staff Registration</legend><p>Please fillup the form below:</p></center>
 			
 				<div class="error-message" id="error-message">
 					<p id="error"></p>
@@ -59,14 +59,14 @@
 			}
 			else
 			{
-				$query = $con->prepare("(SELECT username FROM member WHERE username = ?) UNION (SELECT username FROM pending_registrations WHERE username = ?);");
+				$query = $con->prepare("(SELECT username FROM staff WHERE username = ?) UNION (SELECT username FROM pending_registrations WHERE username = ?);");
 				$query->bind_param("ss", $_POST['m_user'], $_POST['m_user']);
 				$query->execute();
 				if(mysqli_num_rows($query->get_result()) != 0)
 					echo error_with_field("The username you entered is already taken", "m_user");
 				else
 				{
-					$query = $con->prepare("(SELECT email FROM member WHERE email = ?) UNION (SELECT email FROM pending_registrations WHERE email = ?);");
+					$query = $con->prepare("(SELECT email FROM staff WHERE email = ?) UNION (SELECT email FROM pending_registrations WHERE email = ?);");
 					$query->bind_param("ss", $_POST['m_email'], $_POST['m_email']);
 					$query->execute();
 					if(mysqli_num_rows($query->get_result()) != 0)
@@ -74,9 +74,9 @@
 					else
 					{
 						$query = $con->prepare("INSERT INTO pending_registrations(username, password, name, email, category) VALUES(?, ?, ?, ?, ?);");
-						$student = 'Student';
+						$staff = 'Staff';
 						
-						$query->bind_param("sssss", $_POST['m_user'], sha1($_POST['m_pass']), $_POST['m_name'], $_POST['m_email'], $student);
+						$query->bind_param("sssss", $_POST['m_user'], sha1($_POST['m_pass']), $_POST['m_name'], $_POST['m_email'], $staff);
 						if($query->execute())
 							echo success("Details submitted, soon you'll will be notified after verifications!");
 						else

@@ -27,7 +27,6 @@ header {
   height: 50px;
   background: #4e324d;
 }
-
 header #cd-logo {
   float: left;
   margin: 0 0 0 5%;
@@ -53,7 +52,7 @@ header #cd-logo p {
 header #cd-logo p {
   color: #ffffff;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
 }
 
 header::after {
@@ -61,10 +60,6 @@ header::after {
   content: "";
   display: table;
   clear: both;
-}
-
-header a {
-  text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) {

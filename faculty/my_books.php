@@ -118,9 +118,9 @@
 							document.getElementById("success").innerHTML = "Successfully returned '.$books.' books";
 							document.getElementById("success-message").style.display = "block";
 						</script>';
-					// $query = $con->prepare("SELECT balance FROM member WHERE username = ?;");
-					// $query->bind_param("s", $_SESSION['username']);
-					// $query->execute();
+					$query = $con->prepare("SELECT balance FROM member WHERE username = ?;");
+					$query->bind_param("s", $_SESSION['username']);
+					$query->execute();
 					
 					$balance = (int)mysqli_fetch_array($query->get_result())[0];
 					if($balance < 0)
