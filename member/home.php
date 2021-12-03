@@ -35,8 +35,7 @@
 						<th>ISBN<hr></th>
 						<th>Book Title<hr></th>
 						<th>Author<hr></th>
-						<th>Category<hr></th>
-						<th>Price<hr></th>
+						<th>Category<hr></th>						
 						<th>Copies<hr></th>
 					</tr>";
 				for($i=0; $i<$rows; $i++)
@@ -48,11 +47,8 @@
 									<input type='radio' name='rd_book' value=".$row[0]." />
 								<div class='control__indicator'></div>
 							</td>";
-					for($j=0; $j<6; $j++)
-						if($j == 4)
-							echo "<td>Rs.".$row[$j]."</td>";
-						else
-							echo "<td>".$row[$j]."</td>";
+					for($j=0; $j<5; $j++)						
+						echo "<td>".$row[$j]."</td>";
 					echo "</tr>";
 				}
 				echo "</table>";

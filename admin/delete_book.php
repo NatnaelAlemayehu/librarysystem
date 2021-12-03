@@ -36,8 +36,7 @@
 						<th>ISBN<hr></th>
 						<th>Book Title<hr></th>
 						<th>Author<hr></th>
-						<th>Category<hr></th>
-						<th>Price<hr></th>
+						<th>Category<hr></th>						
                         <th>Copies<hr></th>
                         <th>Action<hr></th>
 					</tr>";
@@ -50,13 +49,11 @@
 									<input type='radio' name='rd_book' value=".$row[0]." />
 								<div class='control__indicator'></div>
 							</td>";
-					for($j=0; $j<6; $j++)
-						if($j == 4)
-							echo "<td>Rs.".$row[$j]."</td>";
-						else
-                            echo "<td>".$row[$j]."</td>";
-                            
-                            echo "<td><div class='text-center'><a href='dltbook.php?id=".$row['isbn']."' style='color:#F66; text-decoration:none;'> Remove</a></div></td>";
+					for($j=0; $j<5; $j++)
+						
+						echo "<td>".$row[$j]."</td>";
+						
+						echo "<td><div class='text-center'><a href='dltbook.php?id=".$row['isbn']."' style='color:#F66; text-decoration:none;'> Remove</a></div></td>";
 					echo "</tr>";
 				}
 				echo "</table>";
