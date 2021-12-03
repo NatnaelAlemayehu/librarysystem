@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 10:20 PM
+-- Generation Time: Dec 03, 2021 at 05:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -64,7 +64,6 @@ CREATE TABLE `book` (
   `title` varchar(80) NOT NULL,
   `author` varchar(80) NOT NULL,
   `category` varchar(80) NOT NULL,
-  `price` int(4) UNSIGNED NOT NULL,
   `copies` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -72,10 +71,10 @@ CREATE TABLE `book` (
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`isbn`, `title`, `author`, `category`, `price`, `copies`) VALUES
-('6900152484440', 'V for Vendetta', 'Alan Moore', 'Comics', 299, 13),
-('9782616052277', 'X-Men: God Loves, Man Kills', 'Chris', 'Comics', 399, 33),
-('9789996245442', 'When Breath Becomes Air', 'Paul Kalanithi', 'Medical', 515, 9);
+INSERT INTO `book` (`isbn`, `title`, `author`, `category`, `copies`) VALUES
+('6900152484440', 'V for Vendetta', 'Alan Moore', 'Comics', 13),
+('9782616052277', 'X-Men: God Loves, Man Kills', 'Chris', 'Comics', 33),
+('9789996245442', 'When Breath Becomes Air', 'Paul Kalanithi', 'Medical', 9);
 
 -- --------------------------------------------------------
 
